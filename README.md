@@ -45,7 +45,7 @@ From here, you can view the collections from within this database by running `sh
 
 Now we will spend some time exploring basic commands in MongoDB, including looking into the Aggregate Pipeline framework introduced in MongoDB 3.0 in a bit.
 
-1. Counting
+### 1. Counting
 
 When trying to count documents in a MongoDB query, the `.count()` method is useful. It can be attached to the end of a `.find()` query to simply return the total number of documents found.
 
@@ -57,7 +57,7 @@ Try using the following command to find the total number of heroes (assuming you
 
 Hopefully, you see that 14 heroes were returned to us. 
 
-2. Filtering
+### 2. Filtering
 
 We can take this further by applying a filter to our `.find()` query to restrict the superpowers we are looking for to only be heroes who fly:
 
@@ -67,7 +67,7 @@ We can take this further by applying a filter to our `.find()` query to restrict
 
 Note we should have four heroes here.
 
-3. Projections
+### 3. Projections
 
 In the filtering query, we got a lot of information back about each hero, including an `_id`, `name`, `power`, and `gender`. However, we only really care about the names of the superheroes. We can format the data we get back from the query using what is called as a **projection** through the following query
 
@@ -77,7 +77,7 @@ In the filtering query, we got a lot of information back about each hero, includ
 
 Note we pass another parameter to the `.find()` query saying we would like the name value back (a value of 1 means we wish to include this field in our results, setting all other values to be excluded otherwise). How could we modify the above query to give us back values for name and gender? How can we modify the above query to give us back everything but name?
 
-4. Sorting
+### 4. Sorting
 
 Okay so we are able to get back all of the documents by just their names, but there is a problem. This data is not sorted!
 
@@ -89,7 +89,7 @@ Like the SQL command of `ORDER BY`, there is an equivalent command of `.sort()` 
 
 Here we sort the heroes based on their names in ascending order. How would we sort the heroes based on their names in descending order? (HINT: it is not the same as projecting name out of the results of a query).
 
-5. Regular Expressions
+### 5. Regular Expressions
 
 When we were searching for heroes who fly, we were searching for heroes who had a superpower that exactly matched "flies" in their array of superpowers. What if we don't know exactly what they call their superpower but we have some clue?
 
